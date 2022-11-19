@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">대한FGMS</string>
+    <string name="host_name">http://daehangas.co.kr/</string>
+    <!-- <string name="host_name">http://192.168.0.12/</string>  -->
+    <string name="VersionCode">3</string>
+    <string name="api_login">api/loginEncodeAction.do?</string>
+    <string name="api_customerList">api/customerAllList.do</string>
+    <string name="api_bottleDetail">api/bottleDetail.do</string>
+    <string name="api_ngasProduct">api/ngasProductPriceListV2.do?saleCtype=F</string>
+    <string name="api_reportList">api/workReportList.do</string>
+    <string name="api_controlAction">api/controlAction.do?</string>
+    <string name="api_controlActionNoGas">api/controlActionNoGas.do?</string>
+    <string name="api_customerBottle">api/customerBottle.do?</string>
+    <string name="api_controlCashFlow">api/controlCashFlow.do?</string>
+    <string name="api_getDummyBottle">api/dummyList.do?</string>
+    <string name="api_bottleHistoryList">api/bottleHistoryList.do?</string>
+    <string name="api_controlMassAction">api/controlMassAction.do?</string>
+    <string name="api_appVersion">api/appVersion.do</string>
+    <string name="api_deleteWorkBottle">/api/deleteWorkBottle.do?param=</string>
+    <string name="api_customrBottleList">api/customerBottleList.do?</string>
+    <string name="api_tankProduct">api/tankProductPriceList.do</string>
+    <string name="api_controlTank">api/controlTank.do?</string>
+    <string name="api_ln2LProductPriceList">api/ln2LProductPriceList.do</string>
+    <string name="LN2_ProductID">60</string>
+</resources>

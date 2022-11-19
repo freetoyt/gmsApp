@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "com.gms.app.barcode",
+  "variantName": "release",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "properties": [],
+      "versionCode": 49,
+      "versionName": "1.0.49",
+      "enabled": true,
+      "outputFile": "app-release.apk"
+    }
+  ]
+}
