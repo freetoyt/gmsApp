@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E6E5E5"
+    tools:context=".MainActivity">
+
+    
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="195dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/btn_money"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/title_layout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#1E88E5">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_logo" />
+
+            <TextView
+                android:id="@+id/main_label"
+                android:layout_width="@dimen/title_size"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:gravity="center_vertical"
+                android:text=" (주)대한특수가스F"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/btn_setting"
+                android:layout_width="38dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center|right"
+                android:background="@drawable/bluetooth_icon" />
+
+            <Button
+                android:id="@+id/btn_logout"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center|right"
+                android:background="@mipmap/gms_logout" />
+
+        </LinearLayout>
+
+        <View style="@style/Divider" />
+
+        <TextView
+            android:id="@+id/tv_bottleCount"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:background="#D3D0D0"
+            android:gravity="center"
+            android:text="바코드 카운트"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <View style="@style/Divider" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv"
+            android:layout_width="match_parent"
+            android:layout_height="455dp"
+            android:layout_weight="1"
+            android:scrollbarFadeDuration="0"
+            android:scrollbarSize="5dp"
+            android:scrollbarThumbVertical="@android:color/darker_gray"
+            android:scrollbars="vertical"
+            android:stackFromBottom="true"
+            android:text="1111" />
+    </LinearLayout>
+    <View style="@style/Divider"/>
+
+    <Button
+        android:id="@+id/btn_manual"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="수동입력"
+        android:textColor="#000"
+        android:textSize="@dimen/button_4_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_history"
+        app:layout_constraintStart_toEndOf="@+id/btn_scan" />
+
+    <Button
+        android:id="@+id/btn_scan"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="스캔하기"
+        android:textSize="@dimen/button_4_size"
+        android:textColor="#000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_manual"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_etc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="기타"
+        android:textColor="#000"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_history" />
+
+    <Button
+        android:id="@+id/btn_ln2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="LN2"
+        android:textColor="#000"
+        android:textSize="@dimen/button_4_size"
+        app:layout_constraintBottom_toTopOf="@+id/btn_manual"
+        app:layout_constraintEnd_toStartOf="@+id/btn_noGas"
+        app:layout_constraintStart_toEndOf="@+id/btn_dummy" />
+
+    <Button
+        android:id="@+id/btn_dummy"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="미등록용기"
+        android:textColor="#000"
+        android:textSize="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_scan"
+        app:layout_constraintEnd_toStartOf="@+id/btn_ln2"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_tank"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Tank"
+        android:textColor="#000"
+        android:textSize="@dimen/button_4_size"
+        app:layout_constraintBottom_toTopOf="@+id/btn_etc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_noGas" />
+
+    <Button
+        android:id="@+id/btn_noGas"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="단품판매"
+        android:textColor="#000"
+        android:textSize="@dimen/button_4_size"
+        app:layout_constraintBottom_toTopOf="@+id/btn_history"
+        app:layout_constraintEnd_toStartOf="@+id/btn_tank"
+        app:layout_constraintStart_toEndOf="@+id/btn_ln2" />
+
+    <Button
+        android:id="@+id/btn_mass"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="대량"
+        android:textColor="#000"
+        android:textSize="@dimen/button_4_size"
+        app:layout_constraintBottom_toTopOf="@+id/btn_tank"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_money" />
+
+    <Button
+        android:id="@+id/btn_come"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="입고"
+        android:textColor="#000"
+        android:textSize="@dimen/button_4_size"
+        app:layout_constraintBottom_toTopOf="@+id/btn_dummy"
+        app:layout_constraintEnd_toStartOf="@+id/btn_out"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_money"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="입금/미수"
+        android:textColor="#000"
+        android:textSize="@dimen/button_4_size"
+        app:layout_constraintBottom_toTopOf="@+id/btn_noGas"
+        app:layout_constraintEnd_toStartOf="@+id/btn_mass"
+        app:layout_constraintStart_toEndOf="@+id/btn_out" />
+
+    <Button
+        android:id="@+id/btn_out"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="출고"
+        android:textColor="#000"
+        android:textSize="@dimen/button_4_size"
+        app:layout_constraintBottom_toTopOf="@+id/btn_ln2"
+        app:layout_constraintEnd_toStartOf="@+id/btn_money"
+        app:layout_constraintStart_toEndOf="@+id/btn_come" />
+
+    <Button
+        android:id="@+id/btn_history"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="이전목록"
+        android:textColor="#000"
+        android:textSize="@dimen/button_4_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_etc"
+        app:layout_constraintStart_toEndOf="@+id/btn_manual" />
+
+    <Button
+        android:id="@+id/btn_salesgas"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="가스판매"
+        android:textColor="#000"
+        android:textSize="@dimen/button_4_size"
+        app:layout_constraintBottom_toTopOf="@+id/btn_come"
+        app:layout_constraintEnd_toStartOf="@+id/btn_salesBack"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_salesBack"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="판매회수"
+        android:textColor="#000"
+        android:textSize="@dimen/button_4_size"
+        app:layout_constraintBottom_toTopOf="@+id/btn_out"
+        app:layout_constraintEnd_toStartOf="@+id/btn_agencyRent"
+        app:layout_constraintStart_toEndOf="@+id/btn_salesgas" />
+
+    <Button
+        android:id="@+id/btn_agencyBack"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="대여회수"
+        android:textColor="#000"
+        android:textSize="@dimen/button_4_size"
+        app:layout_constraintBottom_toTopOf="@+id/btn_mass"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_agencyRent" />
+
+    <Button
+        android:id="@+id/btn_agencyRent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="공장대여"
+        android:textColor="#000"
+        android:textSize="@dimen/button_4_size"
+        app:layout_constraintBottom_toTopOf="@+id/btn_money"
+        app:layout_constraintEnd_toStartOf="@+id/btn_agencyBack"
+        app:layout_constraintStart_toEndOf="@+id/btn_salesBack" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
