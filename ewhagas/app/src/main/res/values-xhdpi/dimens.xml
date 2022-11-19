@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources><!--720*1280 Nxus 4 / Nexus -->
+    <dimen name="title_size">220dp</dimen>
+    <dimen name="button_4_size">16sp</dimen>
+    <dimen name="button_long_size">12sp</dimen>
+    <dimen name="item_text_size">16sp</dimen>
+    <dimen name="item_text_sizeB">14sp</dimen>
+    <dimen name="item_text_sizeD">13sp</dimen>
+    <dimen name="item_width0">120dp</dimen>
+    <dimen name="item_width1">100dp</dimen>
+    <dimen name="item_width2">70dp</dimen>
+    <dimen name="item_width3">50dp</dimen>
+    <dimen name="item_width4">120dp</dimen>
+    <dimen name="item_width5">150dp</dimen>
+    <dimen name="item_width6">20dp</dimen>
+    <dimen name="item_width7">50dp</dimen>
+    <dimen name="bottom_short_tsize">12sp</dimen>
+    <dimen name="bottom_long_tsize">10sp</dimen>
+    <dimen name="bottom_layout_width">80dp</dimen>
+    <dimen name="bottom_long_layout_width">90dp</dimen>
+    <dimen name="bottom_cancel_width">60dp</dimen>
+    <dimen name="cash_customerList">90dp</dimen>
+    <dimen name="customer_item_text">14sp</dimen>
+    <dimen name="report_p">210dp</dimen>
+    <dimen name="report_c">40dp</dimen>
+</resources>

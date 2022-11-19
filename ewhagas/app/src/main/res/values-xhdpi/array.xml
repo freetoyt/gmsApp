@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="test" >
+        <item>O2(의료용)</item>
+    </string-array>
+    <string-array name="test1" >
+        <item>2.8</item>
+    </string-array>
+    <string-array name="nodagProduct" >
+        <item>물통(국산)게이지</item>
+    </string-array>
+    <string-array name="orderStatus" >
+        <item>주문접수</item>
+        <item>납품완료</item>
+        <item>판매완료</item>
+    </string-array>
+</resources>
