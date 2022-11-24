@@ -472,7 +472,6 @@ public class MainActivity extends AppCompatActivity implements BottomSheetDialog
             }
         });
 
-
         main_label = (TextView) findViewById(R.id.main_label);
 
         btn_rental.setOnClickListener(new View.OnClickListener() {
@@ -849,22 +848,22 @@ public class MainActivity extends AppCompatActivity implements BottomSheetDialog
                 // 블루투스를 지원하지만 비활성 상태인 경우
                 // 블루투스를 활성 상태로 바꾸기 위해 사용자 동의 요첨
                 Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-//                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S && ActivityCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
-//                    final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-//
-//                    builder.setTitle("블루투스에 대한 액세스가 필요합니다");
-//                    builder.setMessage("어플리케이션이 블루투스를 감지 할 수 있도록 위치 정보 액세스 권한을 부여하십시오.");
-//                    builder.setPositiveButton(android.R.string.ok, null);
-//
-//                    builder.setOnDismissListener(new DialogInterface.OnDismissListener() {
-//
-//                        @Override
-//                        public void onDismiss(DialogInterface dialog) {
-//                            requestPermissions(new String[]{Manifest.permission.BLUETOOTH_SCAN, Manifest.permission.BLUETOOTH_CONNECT}, 2);
-//                        }
-//                    });
-//                    builder.show();
-//                }
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S && ActivityCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
+                    final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+                    builder.setTitle("블루투스에 대한 액세스가 필요합니다");
+                    builder.setMessage("어플리케이션이 블루투스를 감지 할 수 있도록 위치 정보 액세스 권한을 부여하십시오.");
+                    builder.setPositiveButton(android.R.string.ok, null);
+
+                    builder.setOnDismissListener(new DialogInterface.OnDismissListener() {
+
+                        @Override
+                        public void onDismiss(DialogInterface dialog) {
+                            requestPermissions(new String[]{Manifest.permission.BLUETOOTH_SCAN, Manifest.permission.BLUETOOTH_CONNECT}, 2);
+                        }
+                    });
+                    builder.show();
+                }
                 startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
             } else {
                 // 블루투스를 지원하며 활성 상태인 경우
@@ -878,22 +877,23 @@ public class MainActivity extends AppCompatActivity implements BottomSheetDialog
     private void selectDevice() {
         //페어링되었던 기기 목록 획득
         if (mBluetoothAdapter != null) {
-//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S && ActivityCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
-//                final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-//
-//                builder.setTitle("블루투스에 대한 액세스가 필요합니다");
-//                builder.setMessage("어플리케이션이 블루투스를 감지 할 수 있도록 위치 정보 액세스 권한을 부여하십시오.");
-//                builder.setPositiveButton(android.R.string.ok, null);
-//
-//                builder.setOnDismissListener(new DialogInterface.OnDismissListener() {
-//
-//                    @Override
-//                    public void onDismiss(DialogInterface dialog) {
-//                        requestPermissions(new String[]{Manifest.permission.BLUETOOTH_SCAN, Manifest.permission.BLUETOOTH_CONNECT}, 2);
-//                    }
-//                });
-//                builder.show();
-//            }
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S && ActivityCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
+                final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+                builder.setTitle("블루투스에 대한 액세스가 필요합니다");
+                builder.setMessage("어플리케이션이 블루투스를 감지 할 수 있도록 위치 정보 액세스 권한을 부여하십시오.");
+                builder.setPositiveButton(android.R.string.ok, null);
+
+                builder.setOnDismissListener(new DialogInterface.OnDismissListener() {
+
+                    @Override
+                    public void onDismiss(DialogInterface dialog) {
+                        requestPermissions(new String[]{Manifest.permission.BLUETOOTH_SCAN, Manifest.permission.BLUETOOTH_CONNECT}, 2);
+                    }
+                });
+                builder.show();
+            }
             mDevices = mBluetoothAdapter.getBondedDevices();
             //페어링되었던 기기 갯수
             mPairedDeviceCount = mDevices.size();
@@ -987,22 +987,22 @@ public class MainActivity extends AppCompatActivity implements BottomSheetDialog
                 //선택된 기기의 이름을 갖는 bluetooth device의 object
                 mRemoteDevice = getDeviceFromBondedList(selectedDeviceName);
                 //UUID uuid = UUID.fromString("00001101-0000-1000-8000-00805f9b34fb");
-//                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S && ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
-//                    final AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-//
-//                    builder.setTitle("블루투스에 대한 액세스가 필요합니다");
-//                    builder.setMessage("어플리케이션이 블루투스를 감지 할 수 있도록 위치 정보 액세스 권한을 부여하십시오.");
-//                    builder.setPositiveButton(android.R.string.ok, null);
-//
-//                    builder.setOnDismissListener(new DialogInterface.OnDismissListener() {
-//
-//                        @Override
-//                        public void onDismiss(DialogInterface dialog) {
-//                            requestPermissions(new String[]{Manifest.permission.BLUETOOTH_SCAN, Manifest.permission.BLUETOOTH_CONNECT}, 2);
-//                        }
-//                    });
-//                    builder.show();
-//                }
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S && ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
+                    final AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+
+                    builder.setTitle("블루투스에 대한 액세스가 필요합니다");
+                    builder.setMessage("어플리케이션이 블루투스를 감지 할 수 있도록 위치 정보 액세스 권한을 부여하십시오.");
+                    builder.setPositiveButton(android.R.string.ok, null);
+
+                    builder.setOnDismissListener(new DialogInterface.OnDismissListener() {
+
+                        @Override
+                        public void onDismiss(DialogInterface dialog) {
+                            requestPermissions(new String[]{Manifest.permission.BLUETOOTH_SCAN, Manifest.permission.BLUETOOTH_CONNECT}, 2);
+                        }
+                    });
+                    builder.show();
+                }
                 UUID uuid = (mRemoteDevice.getUuids())[0].getUuid();
 
                 try {
@@ -1032,22 +1032,22 @@ public class MainActivity extends AppCompatActivity implements BottomSheetDialog
 
     BluetoothDevice getDeviceFromBondedList(String name) {
         BluetoothDevice selectedDevice = null;
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S && ActivityCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
-//            final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-//
-//            builder.setTitle("블루투스에 대한 액세스가 필요합니다");
-//            builder.setMessage("어플리케이션이 블루투스를 감지 할 수 있도록 위치 정보 액세스 권한을 부여하십시오.");
-//            builder.setPositiveButton(android.R.string.ok, null);
-//
-//            builder.setOnDismissListener(new DialogInterface.OnDismissListener() {
-//
-//                @Override
-//                public void onDismiss(DialogInterface dialog) {
-//                    requestPermissions(new String[]{Manifest.permission.BLUETOOTH_SCAN, Manifest.permission.BLUETOOTH_CONNECT}, 2);
-//                }
-//            });
-//            builder.show();
-//        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S && ActivityCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
+            final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+            builder.setTitle("블루투스에 대한 액세스가 필요합니다");
+            builder.setMessage("어플리케이션이 블루투스를 감지 할 수 있도록 위치 정보 액세스 권한을 부여하십시오.");
+            builder.setPositiveButton(android.R.string.ok, null);
+
+            builder.setOnDismissListener(new DialogInterface.OnDismissListener() {
+
+                @Override
+                public void onDismiss(DialogInterface dialog) {
+                    requestPermissions(new String[]{Manifest.permission.BLUETOOTH_SCAN, Manifest.permission.BLUETOOTH_CONNECT}, 2);
+                }
+            });
+            builder.show();
+        }
         mDevices = mBluetoothAdapter.getBondedDevices();
         //pair 목록에서 해당 이름을 갖는 기기 검색, 찾으면 해당 device 출력
         for (BluetoothDevice device : mDevices) {

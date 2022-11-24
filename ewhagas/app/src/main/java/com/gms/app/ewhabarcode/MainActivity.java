@@ -892,7 +892,6 @@ public class MainActivity extends AppCompatActivity implements BottomSheetDialog
 
 
     // 이하 Bluetooth 연동 소스
-    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
     public void CheckBluetooth() {
 
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
@@ -905,21 +904,23 @@ public class MainActivity extends AppCompatActivity implements BottomSheetDialog
                 // 블루투스를 지원하지만 비활성 상태인 경우
                 // 블루투스를 활성 상태로 바꾸기 위해 사용자 동의 요첨
                 Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-//                if (ActivityCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
-//                    final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-//                    builder.setTitle("권한 제한");
-//                    builder.setMessage("블루투스 연결 권한이 허용되지 않았습니다.");
-//                    builder.setPositiveButton(android.R.string.ok, null);
-//                    builder.setOnDismissListener(new DialogInterface.OnDismissListener() {
-//
-//                        @Override
-//                        public void onDismiss(DialogInterface dialog) {
-//                        }
-//
-//                    });
-//                    builder.show();
-//                    return;
-//                }
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S && ActivityCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
+                    final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+                    builder.setTitle("블루투스에 대한 액세스가 필요합니다");
+                    builder.setMessage("어플리케이션이 블루투스를 감지 할 수 있도록 위치 정보 액세스 권한을 부여하십시오.");
+                    builder.setPositiveButton(android.R.string.ok, null);
+
+                    builder.setOnDismissListener(new DialogInterface.OnDismissListener() {
+
+                        @Override
+                        public void onDismiss(DialogInterface dialog) {
+                            requestPermissions(new String[]{Manifest.permission.BLUETOOTH_SCAN, Manifest.permission.BLUETOOTH_CONNECT}, 2);
+                        }
+                    });
+                    builder.show();
+                }
                 startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
             } else {
                 // 블루투스를 지원하며 활성 상태인 경우
@@ -932,78 +933,72 @@ public class MainActivity extends AppCompatActivity implements BottomSheetDialog
 
     private void selectDevice() {
         //페어링되었던 기기 목록 획득
+        if (mBluetoothAdapter != null) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S && ActivityCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
+                final AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
-        // Use this check to determine whether Bluetooth classic is supported on the device.
-// Then you can selectively disable BLE-related features.
-        if (!getPackageManager().hasSystemFeature(PackageManager.FEATURE_BLUETOOTH)) {
-            Toast.makeText(this, "지원하지 않습니다", Toast.LENGTH_SHORT).show();
-            finish();
-        }
-// Use this check to determine whether BLE is supported on the device. Then
-// you can selectively disable BLE-related features.
-        if (!getPackageManager().hasSystemFeature(PackageManager.FEATURE_BLUETOOTH_LE)) {
-            Toast.makeText(this, "지원하지 않습니다", Toast.LENGTH_SHORT).show();
-            finish();
-        }
+                builder.setTitle("블루투스에 대한 액세스가 필요합니다");
+                builder.setMessage("어플리케이션이 블루투스를 감지 할 수 있도록 위치 정보 액세스 권한을 부여하십시오.");
+                builder.setPositiveButton(android.R.string.ok, null);
 
-//        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
-//            // TODO: Consider calling
-//            //    ActivityCompat#requestPermissions
-//            // here to request the missing permissions, and then overriding
-//            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-//            //                                          int[] grantResults)
-//            // to handle the case where the user grants the permission. See the documentation
-//            // for ActivityCompat#requestPermissions for more details.
-//           // return;
-//        }
-        mDevices = mBluetoothAdapter.getBondedDevices();
-        //페어링되었던 기기 갯수
-        mPairedDeviceCount = mDevices.size();
-        //Alertdialog 생성(activity에는 context입력)
-        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-        //AlertDialog 제목 설정
-        builder.setTitle("기기를 선택해주세요");
+                builder.setOnDismissListener(new DialogInterface.OnDismissListener() {
 
-        // 페어링 된 블루투스 장치의 이름 목록 작성
-        final List<String> listItems = new ArrayList<String>();
-        for (BluetoothDevice device : mDevices) {
-            listItems.add(device.getName());
-        }
-        if (listItems.size() == 0) {
-            //no bonded device => searching
-            //Log.d("Bluetooth", "No bonded device");
-        } else {
-            // 취소 항목 추가
-            listItems.add("Cancel");
-
-            final CharSequence[] items = listItems.toArray(new CharSequence[listItems.size()]);
-            builder.setItems(items, new DialogInterface.OnClickListener() {
-                //각 아이템의 click에 따른 listener를 설정
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    Dialog dialog_ = (Dialog) dialog;
-                    // 연결할 장치를 선택하지 않고 '취소'를 누른 경우
-                    if (which == listItems.size() - 1) {
-                        Toast.makeText(dialog_.getContext(), "취소를 선택했습니다", Toast.LENGTH_SHORT).show();
-
-                    } else {
-                        //취소가 아닌 디바이스를 선택한 경우 해당 기기에 연결
-                        connectToSelectedDevice(items[which].toString());
-                        connectBlue = true;
-                        //Toast.makeText(MainActivity.this, "블루투스가 connectBlue."+connectBlue, Toast.LENGTH_SHORT).show();
+                    @Override
+                    public void onDismiss(DialogInterface dialog) {
+                        requestPermissions(new String[]{Manifest.permission.BLUETOOTH_SCAN, Manifest.permission.BLUETOOTH_CONNECT}, 2);
                     }
-                }
-            });
-
-            builder.setCancelable(false);    // 뒤로 가기 버튼 사용 금지
-            AlertDialog alert = builder.create();
-            if (mSocket != null && mSocket.isConnected()) {
-                Toast.makeText(MainActivity.this, "블루투스가 연결되었습니다.", Toast.LENGTH_SHORT).show();
-
-            } else {
-                Toast.makeText(MainActivity.this, "블루투스가 연결되지 않았습니다", Toast.LENGTH_SHORT).show();
+                });
+                builder.show();
             }
-            alert.show();   //alert 시작
+            mDevices = mBluetoothAdapter.getBondedDevices();
+            //페어링되었던 기기 갯수
+            mPairedDeviceCount = mDevices.size();
+            //Alertdialog 생성(activity에는 context입력)
+            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+            //AlertDialog 제목 설정
+            builder.setTitle("기기를 선택해주세요");
+
+            // 페어링 된 블루투스 장치의 이름 목록 작성
+            final List<String> listItems = new ArrayList<String>();
+            for (BluetoothDevice device : mDevices) {
+                listItems.add(device.getName());
+            }
+            if (listItems.size() == 0) {
+                //no bonded device => searching
+                //Log.d("Bluetooth", "No bonded device");
+            } else {
+                // 취소 항목 추가
+                listItems.add("Cancel");
+
+                final CharSequence[] items = listItems.toArray(new CharSequence[listItems.size()]);
+                builder.setItems(items, new DialogInterface.OnClickListener() {
+                    //각 아이템의 click에 따른 listener를 설정
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Dialog dialog_ = (Dialog) dialog;
+                        // 연결할 장치를 선택하지 않고 '취소'를 누른 경우
+                        if (which == listItems.size() - 1) {
+                            Toast.makeText(dialog_.getContext(), "취소를 선택했습니다", Toast.LENGTH_SHORT).show();
+
+                        } else {
+                            //취소가 아닌 디바이스를 선택한 경우 해당 기기에 연결
+                            connectToSelectedDevice(items[which].toString());
+                            connectBlue = true;
+                            //Toast.makeText(MainActivity.this, "블루투스가 connectBlue."+connectBlue, Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+
+                builder.setCancelable(false);    // 뒤로 가기 버튼 사용 금지
+                AlertDialog alert = builder.create();
+                if (mSocket != null && mSocket.isConnected()) {
+                    Toast.makeText(MainActivity.this, "블루투스가 연결되었습니다.", Toast.LENGTH_SHORT).show();
+
+                } else {
+                    Toast.makeText(MainActivity.this, "블루투스가 연결되지 않았습니다", Toast.LENGTH_SHORT).show();
+                }
+                alert.show();   //alert 시작
+            }
         }
     }
 
@@ -1048,18 +1043,22 @@ public class MainActivity extends AppCompatActivity implements BottomSheetDialog
                 //선택된 기기의 이름을 갖는 bluetooth device의 object
                 mRemoteDevice = getDeviceFromBondedList(selectedDeviceName);
                 //UUID uuid = UUID.fromString("00001101-0000-1000-8000-00805f9b34fb");
-                Log.d("MainActivity", "PackageActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.BLUETOOTH_CONNECT)  =" + ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.BLUETOOTH_CONNECT) );
-                Log.d("MainActivity", "PackageManager.PERMISSION_GRANTED =" + PackageManager.PERMISSION_GRANTED);
-//                if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
-//                    // TODO: Consider calling
-//                    //    ActivityCompat#requestPermissions
-//                    // here to request the missing permissions, and then overriding
-//                    //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-//                    //                                          int[] grantResults)
-//                    // to handle the case where the user grants the permission. See the documentation
-//                    // for ActivityCompat#requestPermissions for more details.
-//                    //;
-//                }
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S && ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
+                    final AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+
+                    builder.setTitle("블루투스에 대한 액세스가 필요합니다");
+                    builder.setMessage("어플리케이션이 블루투스를 감지 할 수 있도록 위치 정보 액세스 권한을 부여하십시오.");
+                    builder.setPositiveButton(android.R.string.ok, null);
+
+                    builder.setOnDismissListener(new DialogInterface.OnDismissListener() {
+
+                        @Override
+                        public void onDismiss(DialogInterface dialog) {
+                            requestPermissions(new String[]{Manifest.permission.BLUETOOTH_SCAN, Manifest.permission.BLUETOOTH_CONNECT}, 2);
+                        }
+                    });
+                    builder.show();
+                }
                 UUID uuid = (mRemoteDevice.getUuids())[0].getUuid();
 
                 try {
@@ -1089,16 +1088,22 @@ public class MainActivity extends AppCompatActivity implements BottomSheetDialog
 
     BluetoothDevice getDeviceFromBondedList(String name) {
         BluetoothDevice selectedDevice = null;
-//        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
-//            // TODO: Consider calling
-//            //    ActivityCompat#requestPermissions
-//            // here to request the missing permissions, and then overriding
-//            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-//            //                                          int[] grantResults)
-//            // to handle the case where the user grants the permission. See the documentation
-//            // for ActivityCompat#requestPermissions for more details.
-//            return null;
-//        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S && ActivityCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
+            final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+            builder.setTitle("블루투스에 대한 액세스가 필요합니다");
+            builder.setMessage("어플리케이션이 블루투스를 감지 할 수 있도록 위치 정보 액세스 권한을 부여하십시오.");
+            builder.setPositiveButton(android.R.string.ok, null);
+
+            builder.setOnDismissListener(new DialogInterface.OnDismissListener() {
+
+                @Override
+                public void onDismiss(DialogInterface dialog) {
+                    requestPermissions(new String[]{Manifest.permission.BLUETOOTH_SCAN, Manifest.permission.BLUETOOTH_CONNECT}, 2);
+                }
+            });
+            builder.show();
+        }
         mDevices = mBluetoothAdapter.getBondedDevices();
         //pair 목록에서 해당 이름을 갖는 기기 검색, 찾으면 해당 device 출력
         for (BluetoothDevice device : mDevices) {
@@ -1115,7 +1120,7 @@ public class MainActivity extends AppCompatActivity implements BottomSheetDialog
         final Handler handler = new Handler();
         readBuffer = new byte[1024];  //  수신 버퍼
         readBufferPositon = 0;        //   버퍼 내 수신 문자 저장 위치
-        //Log.i("***************** MainActivity  beginListenForData msg","start");
+        Log.i("***************** MainActivity  beginListenForData msg","start");
         // 문자열 수신 쓰레드
         mWorkerThread = new Thread(new Runnable() {
             @Override
