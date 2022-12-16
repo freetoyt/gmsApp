@@ -6,16 +6,42 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".ReportActivity">
+    <LinearLayout
+        android:id="@+id/title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#FFFFFF">
 
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@mipmap/ic_logo" />
+
+        <TextView
+            android:id="@+id/main_label"
+            android:layout_width="@dimen/title_size"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:gravity="center_vertical"
+            android:text="@string/app_title"
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:paddingLeft="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </LinearLayout>
     <TextView
         android:id="@+id/tv_reportTitle"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_gravity="center_vertical"
-        android:background="#D3D0D0"
+        android:background="@drawable/bg_gradient"
         android:gravity="center"
         android:text="업무일지"
-        android:textColor="#000000"
+        android:textColor="#ffffff"
         android:textSize="20sp" />
     <View style="@style/Divider" />
 
@@ -34,6 +60,8 @@
     <Button
         android:id="@+id/btn_okbtn"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/background"
         android:text="메인으로"/>
 </LinearLayout>

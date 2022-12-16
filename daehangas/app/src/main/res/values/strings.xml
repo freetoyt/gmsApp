@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">대한GMS</string>
-    <string name="host_name">http://daehangas.co.kr/</string>
-    <!-- <string name="host_name">http://192.168.0.12/</string> -->
-
+     <string name="host_name">http://daehangas.co.kr/</string>
+    <!--<string name="host_name">http://192.168.0.12/</string>-->
+    <string name="app_title">(주)대한특수가스</string>
     <string name="api_login">api/loginEncodeAction.do?</string>
     <string name="VersionCode">23</string>
     <string name="api_customerList">api/customerAllList.do</string>

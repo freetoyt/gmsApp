@@ -198,7 +198,7 @@ public class OrderProductDialog {
                         }
 
                         AlertDialog.Builder ad = new AlertDialog.Builder(context);
-                        ad.setMessage(String.format("\"%s %s를 %s\"하겠습니까?", strProductType,productCount.getText().toString(), strAction));
+                        ad.setMessage(String.format("\"%s %s를 %s\"하겠습니까?", strProductType+" "+productCapa,productCount.getText().toString(), strAction));
 
                         ad.setPositiveButton("확인", new DialogInterface.OnClickListener() {
                             @Override

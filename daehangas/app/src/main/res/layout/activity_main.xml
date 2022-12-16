@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E6E5E5"
+    android:background="#ffffff"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -20,11 +20,12 @@
             android:id="@+id/title_layout"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="#1E88E5">
+            android:background="#FFFFFF">
 
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 android:src="@mipmap/ic_logo" />
 
             <TextView
@@ -33,9 +34,10 @@
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:gravity="center_vertical"
-                android:text=" (주)대한특수가스"
-                android:textColor="#ffffff"
+                android:text="@string/app_title"
+                android:textColor="#000"
                 android:textSize="20sp"
+                android:paddingLeft="5dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
@@ -46,14 +48,14 @@
                 android:layout_width="38dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center|right"
-                android:background="@drawable/bluetooth_icon" />
+                android:background="@drawable/twotone_bluetooth_black_24" />
 
             <Button
                 android:id="@+id/btn_logout"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center|right"
-                android:background="@mipmap/gms_logout" />
+                android:background="@drawable/twotone_power_settings_new_black_24" />
 
         </LinearLayout>
 
@@ -64,10 +66,12 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_gravity="center_vertical"
-            android:background="#D3D0D0"
-            android:gravity="center"
+            android:background="@drawable/bg_gradient"
+            android:paddingTop="5dp"
+            android:paddingRight="20dp"
+            android:gravity="right"
             android:text="바코드 카운트"
-            android:textColor="#000000"
+            android:textColor="#ffffff"
             android:textSize="20sp" />
 
         <View style="@style/Divider" />
@@ -89,9 +93,11 @@
     <Button
         android:id="@+id/btn_manual"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:text="수동입력"
         android:textColor="#000"
+        android:layout_margin="5dp"
+        android:background="@drawable/background"
         android:textSize="@dimen/button_4_size"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btn_history"
@@ -100,10 +106,12 @@
     <Button
         android:id="@+id/btn_scan"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:text="스캔하기"
         android:textSize="@dimen/button_4_size"
         android:textColor="#000"
+        android:layout_margin="5dp"
+        android:background="@drawable/background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btn_manual"
         app:layout_constraintStart_toStartOf="parent" />
@@ -111,9 +119,11 @@
     <Button
         android:id="@+id/btn_etc"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:text="기타"
         android:textColor="#000"
+        android:layout_margin="5dp"
+        android:background="@drawable/background"
         android:textSize="@dimen/button_4_size"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -122,10 +132,12 @@
     <Button
         android:id="@+id/btn_tank"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:text="Tank"
         android:textColor="#000"
         android:textSize="18sp"
+        android:layout_margin="5dp"
+        android:background="@drawable/background"
         app:layout_constraintBottom_toTopOf="@+id/btn_manual"
         app:layout_constraintEnd_toStartOf="@+id/btn_buyback"
         app:layout_constraintStart_toEndOf="@+id/btn_dummy" />
@@ -133,10 +145,12 @@
     <Button
         android:id="@+id/btn_dummy"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:text="미등록용기"
         android:textColor="#000"
         android:textSize="10dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/background"
         app:layout_constraintBottom_toTopOf="@+id/btn_manual"
         app:layout_constraintEnd_toStartOf="@+id/btn_tank"
         app:layout_constraintStart_toStartOf="parent" />
@@ -144,9 +158,11 @@
     <Button
         android:id="@+id/btn_report"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:text="업무일지"
         android:textColor="#000"
+        android:layout_margin="5dp"
+        android:background="@drawable/background"
         android:textSize="@dimen/button_4_size"
         app:layout_constraintBottom_toTopOf="@+id/btn_etc"
         app:layout_constraintEnd_toEndOf="parent"
@@ -155,9 +171,11 @@
     <Button
         android:id="@+id/btn_buyback"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:text="주문"
         android:textColor="#000"
+        android:layout_margin="5dp"
+        android:background="@drawable/background"
         android:textSize="@dimen/button_4_size"
         app:layout_constraintBottom_toTopOf="@+id/btn_manual"
         app:layout_constraintEnd_toStartOf="@+id/btn_report"
@@ -166,9 +184,11 @@
     <Button
         android:id="@+id/btn_rentB"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:text="대여용기"
         android:textColor="#000"
+        android:layout_margin="5dp"
+        android:background="@drawable/background"
         android:textSize="@dimen/button_4_size"
         app:layout_constraintBottom_toTopOf="@+id/btn_report"
         app:layout_constraintEnd_toEndOf="parent"
@@ -177,9 +197,11 @@
     <Button
         android:id="@+id/btn_noGas"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:text="단품판매"
         android:textColor="#000"
+        android:layout_margin="5dp"
+        android:background="@drawable/background"
         android:textSize="@dimen/button_4_size"
         app:layout_constraintBottom_toTopOf="@+id/btn_dummy"
         app:layout_constraintEnd_toStartOf="@+id/btn_mass"
@@ -188,9 +210,11 @@
     <Button
         android:id="@+id/btn_money"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:text="입금/미수"
         android:textColor="#000"
+        android:layout_margin="5dp"
+        android:background="@drawable/background"
         android:textSize="@dimen/button_4_size"
         app:layout_constraintBottom_toTopOf="@+id/btn_buyback"
         app:layout_constraintEnd_toStartOf="@+id/btn_rentB"
@@ -199,10 +223,12 @@
     <Button
         android:id="@+id/btn_mass"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:text="대량\n(대리점)"
         android:textColor="#000"
         android:textSize="9sp"
+        android:layout_margin="5dp"
+        android:background="@drawable/background"
         app:layout_constraintBottom_toTopOf="@+id/btn_tank"
         app:layout_constraintEnd_toStartOf="@+id/btn_money"
         app:layout_constraintStart_toEndOf="@+id/btn_noGas" />
@@ -210,9 +236,11 @@
     <Button
         android:id="@+id/btn_history"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:text="이전목록"
         android:textColor="#000"
+        android:layout_margin="5dp"
+        android:background="@drawable/background"
         android:textSize="@dimen/button_4_size"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btn_etc"
@@ -221,9 +249,11 @@
     <Button
         android:id="@+id/btn_rental"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:text="대여\n(가스)"
         android:textColor="#000"
+        android:layout_margin="5dp"
+        android:background="@drawable/background"
         android:textSize="@dimen/bottom_long_tsize"
         app:layout_constraintBottom_toTopOf="@+id/btn_noGas"
         app:layout_constraintEnd_toStartOf="@+id/btn_back"
@@ -232,10 +262,12 @@
     <Button
         android:id="@+id/btn_back"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:text="회수"
         android:textColor="#000"
         android:textSize="18sp"
+        android:layout_margin="5dp"
+        android:background="@drawable/background"
         app:layout_constraintBottom_toTopOf="@+id/btn_mass"
         app:layout_constraintEnd_toStartOf="@+id/btn_sales"
         app:layout_constraintStart_toEndOf="@+id/btn_rental" />
@@ -243,10 +275,12 @@
     <Button
         android:id="@+id/btn_sales"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:text="판매\n(용기+가스)"
         android:textColor="#000"
         android:textSize="9sp"
+        android:layout_margin="5dp"
+        android:background="@drawable/background"
         app:layout_constraintBottom_toTopOf="@+id/btn_money"
         app:layout_constraintEnd_toStartOf="@+id/btn_ln2"
         app:layout_constraintStart_toEndOf="@+id/btn_back" />
@@ -254,9 +288,11 @@
     <Button
         android:id="@+id/btn_ln2"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:text="LN2"
         android:textColor="#000"
+        android:layout_margin="5dp"
+        android:background="@drawable/background"
         android:textSize="@dimen/button_4_size"
         app:layout_constraintBottom_toTopOf="@+id/btn_rentB"
         app:layout_constraintEnd_toEndOf="parent"

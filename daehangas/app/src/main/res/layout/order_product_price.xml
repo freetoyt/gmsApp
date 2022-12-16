@@ -6,7 +6,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="35dp">
+        android:layout_gravity="center_vertical"
+        android:layout_height="30dp">
 
         <TextView
             android:id="@+id/tv_productNm"
@@ -65,7 +66,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="35dp">
+        android:layout_height="30dp">
         <TextView
             android:id="@+id/tv_price"
             android:layout_width="wrap_content"

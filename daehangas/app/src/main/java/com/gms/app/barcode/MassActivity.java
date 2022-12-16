@@ -310,7 +310,7 @@ public class MassActivity extends AppCompatActivity {
                     }
                 }
                 isScan = false;
-                Toast.makeText(MassActivity.this, "취소!", Toast.LENGTH_LONG).show();
+                Toast.makeText(MassActivity.this, "취소!", Toast.LENGTH_SHORT).show();
 
             } else {
                 //qrcode 결과가 있으면
@@ -329,7 +329,7 @@ public class MassActivity extends AppCompatActivity {
                         networkTask.execute();
                         //data를 json으로 변환
                         //JSONObject obj = new JSONObject(result.getContents());
-                        //Toast.makeText(MainActivity.this, obj.getString("name"), Toast.LENGTH_LONG).show();
+                        //Toast.makeText(MainActivity.this, obj.getString("name"), Toast.LENGTH_SHORT).show();
                     }
                     // } catch (JSONException e) {
                 } catch (Exception e) {

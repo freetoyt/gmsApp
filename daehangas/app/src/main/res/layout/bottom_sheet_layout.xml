@@ -6,15 +6,17 @@
     android:layout_height="match_parent"
     android:paddingTop="10dp"
     android:paddingBottom="10dp"
-    android:background="#E6E5E5">
+    android:background="#ffffff">
 
     <Button
         android:id="@+id/btn_come"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:text="입고"
         android:textColor="#000"
         android:textSize="@dimen/button_4_size"
+        android:layout_margin="5dp"
+        android:background="@drawable/background"
         app:layout_constraintEnd_toStartOf="@+id/btn_incar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -22,10 +24,12 @@
     <Button
         android:id="@+id/btn_incar"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:text="상차"
         android:textColor="#000"
         android:textSize="16sp"
+        android:layout_margin="5dp"
+        android:background="@drawable/background"
         app:layout_constraintEnd_toStartOf="@+id/btn_out"
         app:layout_constraintStart_toEndOf="@+id/btn_come"
         app:layout_constraintTop_toTopOf="parent" />
@@ -33,10 +37,12 @@
     <Button
         android:id="@+id/btn_out"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:text="출고"
         android:textColor="#000"
         android:textSize="@dimen/button_4_size"
+        android:layout_margin="5dp"
+        android:background="@drawable/background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btn_incar"
         app:layout_constraintTop_toTopOf="parent" />
@@ -44,8 +50,10 @@
     <Button
         android:id="@+id/btn_freechange"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:text="무상교체"
+        android:layout_margin="5dp"
+        android:background="@drawable/background"
         app:layout_constraintEnd_toStartOf="@+id/btn_freeback"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_come" />
@@ -53,8 +61,10 @@
     <Button
         android:id="@+id/btn_freeback"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:text="무료회수"
+        android:layout_margin="5dp"
+        android:background="@drawable/background"
         app:layout_constraintEnd_toStartOf="@+id/btn_buyback"
         app:layout_constraintStart_toEndOf="@+id/btn_freechange"
         app:layout_constraintTop_toBottomOf="@+id/btn_incar" />
@@ -62,8 +72,10 @@
     <Button
         android:id="@+id/btn_buyback"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:text="매입"
+        android:layout_margin="5dp"
+        android:background="@drawable/background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btn_freeback"
         app:layout_constraintTop_toBottomOf="@+id/btn_out" />
@@ -71,8 +83,10 @@
     <Button
         android:id="@+id/btn_salesBack"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:text="판매회수"
+        android:layout_margin="5dp"
+        android:background="@drawable/background"
         app:layout_constraintEnd_toStartOf="@+id/btn_deleteAll"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_freechange" />
@@ -80,8 +94,10 @@
     <Button
         android:id="@+id/btn_deleteAll"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:text="전체삭제"
+        android:layout_margin="5dp"
+        android:background="@drawable/background"
         app:layout_constraintEnd_toStartOf="@+id/btn_info"
         app:layout_constraintStart_toEndOf="@+id/btn_salesBack"
         app:layout_constraintTop_toBottomOf="@+id/btn_freeback" />
@@ -89,8 +105,10 @@
     <Button
         android:id="@+id/btn_info"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:text="앱정보"
+        android:layout_margin="5dp"
+        android:background="@drawable/background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btn_deleteAll"
         app:layout_constraintTop_toBottomOf="@+id/btn_buyback" />

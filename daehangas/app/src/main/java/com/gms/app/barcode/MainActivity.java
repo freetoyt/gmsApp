@@ -684,7 +684,7 @@ public class MainActivity extends AppCompatActivity implements BottomSheetDialog
             public void onClick(View v) {
 
                 if (arrayList.size() <= 0) {
-                    Toast.makeText(MainActivity.this, "용기를 선택하세요", Toast.LENGTH_LONG).show();
+                    Toast.makeText(MainActivity.this, "용기를 선택하세요", Toast.LENGTH_SHORT).show();
                 } else {
 
                     String tempStr = "";
@@ -814,7 +814,7 @@ public class MainActivity extends AppCompatActivity implements BottomSheetDialog
                         networkTask.execute();
                         //data를 json으로 변환
                         JSONObject obj = new JSONObject(result.getContents());
-                        //Toast.makeText(MainActivity.this, obj.getString("name"), Toast.LENGTH_LONG).show();
+                        //Toast.makeText(MainActivity.this, obj.getString("name"), Toast.LENGTH_SHORT).show();
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();

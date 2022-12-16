@@ -195,7 +195,7 @@ public class OrderListActivity extends AppCompatActivity {
                     searchOrderDt = et_searchReqDt.getText().toString();
                     new HttpAsyncTask().execute(host + getString(R.string.api_orderList) + "searchCustomerNm=" + et_searchCustomerNm.getText().toString() + "&searchOrderProcessCd=" + searchOrderProcessCd +"&searchOrderDt="+searchOrderDt+"&currentPage=" + currentPage++);
 //                }else {
-//                    Toast.makeText(OrderListActivity.this, "거개처명을 입력하세요.", Toast.LENGTH_LONG).show();
+//                    Toast.makeText(OrderListActivity.this, "거개처명을 입력하세요.", Toast.LENGTH_SHORT).show();
 //                }
             }
         });
@@ -216,7 +216,7 @@ public class OrderListActivity extends AppCompatActivity {
                 super.onScrollStateChanged(recyclerView, newState);
 
                 if (!recyclerView.canScrollVertically(1)) {
-                    Toast.makeText(OrderListActivity.this, "목록을 추가합니다.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(OrderListActivity.this, "목록을 추가합니다.", Toast.LENGTH_SHORT).show();
                     new HttpAsyncTask().execute(host +  getString(R.string.api_orderList)+"searchCustomerNm=" + et_searchCustomerNm.getText().toString() + "&searchOrderProcessCd=" + searchOrderProcessCd +"&searchOrderDt="+et_searchReqDt.getText().toString()+"&currentPage="+currentPage++);
                 }
             }
