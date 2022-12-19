@@ -12,13 +12,12 @@
         android:textColor="#ffffff"
         android:textSize="16dp"
         android:text="커스텀 다이얼로그"
-        android:background="@color/colorAccent"/>
+        android:background="@drawable/bg_gradient"/>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#000000"/>
-
 
     <Spinner
         android:id="@+id/spinner"
@@ -37,7 +36,7 @@
     <EditText
         android:id="@+id/et_productCount"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:gravity="center"
         android:textColor="#000000"
         android:textSize="16dp"
@@ -49,39 +48,38 @@
         android:background="#000000"/>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="45dp"
         android:orientation="horizontal">
 
         <Button
             android:id="@+id/okButton"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="35dp"
             android:layout_weight="1"
             android:gravity="center"
             android:text="확인"
             android:textColor="#000000"
             android:textSize="16dp"
-            android:background="#ffffff"/>
-
-        <View
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:background="#000000" />
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/background"/>
 
         <Button
             android:id="@+id/cancelButton"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="35dp"
             android:layout_weight="1"
             android:gravity="center"
             android:text="닫기"
             android:textColor="#000000"
             android:textSize="16dp"
-            android:background="#ffffff"/>
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/background"/>
     </LinearLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#000000"/>
 </LinearLayout>

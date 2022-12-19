@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E6E5E5"
+    android:background="#009688"
     tools:context=".LoginActivity">
 
     <TextView
@@ -19,7 +19,7 @@
         android:ems="10"
         android:text="대한특수가스 (공장용)"
         android:textAlignment="center"
-        android:textColor="#000000"
+        android:textColor="#ffffff"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,6 +36,8 @@
         android:layout_marginRight="8dp"
         android:ems="10"
         android:hint="아이디"
+        android:textColorHint="#B1AFAF"
+        android:textColor="#ffffff"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,6 +50,8 @@
         android:layout_marginTop="10dp"
         android:ems="10"
         android:hint="비밀번호"
+        android:textColorHint="#B1AFAF"
+        android:textColor="#ffffff"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="@+id/et_id"
         app:layout_constraintStart_toStartOf="@+id/et_id"
@@ -60,7 +64,8 @@
         android:layout_marginTop="10dp"
         android:text="로그인"
         android:textSize="20sp"
-        android:background="@android:color/darker_gray"
+        android:textColor="#000000"
+        android:background="@drawable/background"
         app:layout_constraintEnd_toEndOf="@+id/et_pass"
         app:layout_constraintStart_toStartOf="@+id/et_pass"
         app:layout_constraintTop_toBottomOf="@+id/chk_login" />
@@ -71,6 +76,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="로그인유지"
+        android:textColor="#ffffff"
         app:layout_constraintEnd_toEndOf="@+id/et_pass"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_pass" />
@@ -82,6 +88,7 @@
         android:layout_marginTop="32dp"
         android:textSize="15sp"
         android:text="버전"
+        android:textColor="#ffffff"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_login" />

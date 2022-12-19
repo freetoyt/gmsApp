@@ -7,8 +7,8 @@ android {
         applicationId "com.gms.app.daehanfactory"
         minSdkVersion 16
         targetSdkVersion 32
-        versionCode 17
-        versionName "1.0.17"
+        versionCode 18
+        versionName "1.1.01"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {

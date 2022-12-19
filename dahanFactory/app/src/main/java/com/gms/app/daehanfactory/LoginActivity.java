@@ -57,7 +57,7 @@ public class LoginActivity extends AppCompatActivity {
         try{
             packageInfo = getPackageManager().getPackageInfo(getPackageName(),0);
 
-            tv_version.setText("V : "+packageInfo.versionName);
+            tv_version.setText("V "+packageInfo.versionName);
         }catch (PackageManager.NameNotFoundException e){
             Log.e("############## Package Version","NameNotFoundException");
         }

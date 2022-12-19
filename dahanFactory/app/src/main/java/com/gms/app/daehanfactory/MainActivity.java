@@ -457,7 +457,7 @@ public class MainActivity extends AppCompatActivity implements BottomSheetDialog
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(MainActivity.this, "용기를"+btn_salesgas.getText().toString(), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(MainActivity.this, "용기를"+btn_salesgas.getText().toString(), Toast.LENGTH_SHORT).show();
                 if(arrayList.size() <= 0){
                     Toast.makeText(MainActivity.this, "용기를 선택하세요", Toast.LENGTH_SHORT).show();
                 }else {
@@ -866,7 +866,7 @@ public class MainActivity extends AppCompatActivity implements BottomSheetDialog
                     editor.putString("notSaveArray", arrStr);
                     editor.commit();
                 }
-                Toast.makeText(MainActivity.this, "취소!", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(MainActivity.this, "취소!", Toast.LENGTH_SHORT).show();
                 isScan = false;
             } else {
                 //qrcode 결과가 있으면
@@ -1182,9 +1182,11 @@ public class MainActivity extends AppCompatActivity implements BottomSheetDialog
             String bottleId ="";
             String productNm ="";
             String bottleChargeDt = null;
-            Button btn_info = findViewById(R.id.btn_info);
 
             try {
+
+                Button btn_info = findViewById(R.id.btn_info);
+
                 Gson gson = new Gson();
                 BottleVO bottle = new BottleVO();
                 bottle = (BottleVO) gson.fromJson(s, bottle.getClass());

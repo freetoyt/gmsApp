@@ -99,7 +99,7 @@ public class CashDialog {
 
         // 커스텀 다이얼로그의 각 위젯들을 정의한다.
         final TextView title = (TextView) dlg.findViewById(R.id.title);
-        final EditText message = (EditText) dlg.findViewById(R.id.mesgase);
+        final EditText message = (EditText) dlg.findViewById(R.id.mesgase1);
         final Button okButton = (Button) dlg.findViewById(R.id.okButton);
         final Button cancelButton = (Button) dlg.findViewById(R.id.cancelButton);
 

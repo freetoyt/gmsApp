@@ -29,6 +29,7 @@ import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
 import java.lang.reflect.Type;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -111,9 +112,8 @@ public class StockReportDialog {
                 Toast.makeText(context, "click item", Toast.LENGTH_SHORT).show();
                 String text = (String)parent.getAdapter().getItem(position);
                 message.setText(text);
-
                 // 서버 전송
-                new HttpAsyncTaskB().execute(host + context.getString(R.string.api_customrBottleList) +"customerNm=" + text );
+                new HttpAsyncTaskB().execute(host + context.getString(R.string.api_customrBottleList) +"customerNm=" +  URLEncoder.encode(text) );
             }
         });
 

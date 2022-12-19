@@ -82,7 +82,7 @@ public class NoGasDialog {
         //Log.e("noGasDialog ",buttonType);
         if(value ==null || value.length() <= 10)
             new HttpAsyncTask().execute(host + context.getString(R.string.api_customerList));
-        Log.d("noGasDialog R.string.api_ngasProduct ",context.getString(R.string.api_ngasProduct));
+//        Log.d("noGasDialog R.string.api_ngasProduct ",context.getString(R.string.api_ngasProduct));
         if(buttonType.equals("LN2"))
             new HttpAsyncTask2().execute(host + context.getString(R.string.api_ln2LProductPriceList));
         else

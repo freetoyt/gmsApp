@@ -13,7 +13,7 @@
         android:textColor="#ffffff"
         android:textSize="16sp"
         android:text="커스텀 다이얼로그"
-        android:background="@color/colorAccent"/>
+        android:background="@drawable/bg_gradient"/>
 
     <View
         android:layout_width="match_parent"
@@ -45,20 +45,22 @@
             android:orientation="horizontal">
             <TextView
                 android:id="@+id/tv_pNm"
-                android:layout_width="@dimen/report_p"
+                android:layout_width="wrap_content"
                 android:layout_height="30dp"
+                android:layout_weight="3"
                 android:gravity="center"
                 android:textColor="#000000"
-                android:textSize="20sp"
+                android:textSize="@dimen/customer_item_text"
                 android:layout_gravity="center_vertical"
                 android:text="상품" />
             <TextView
                 android:id="@+id/tv_rvtitle"
-                android:layout_width="@dimen/report_c"
+                android:layout_width="wrap_content"
                 android:layout_height="30dp"
+                android:layout_weight="1"
                 android:gravity="center"
                 android:textColor="#000000"
-                android:textSize="20sp"
+                android:textSize="@dimen/customer_item_text"
                 android:layout_gravity="center_vertical"
                 android:text="수량" />
 
@@ -82,24 +84,24 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="45dp"
         android:orientation="horizontal">
 
         <Button
             android:id="@+id/okButton"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="35dp"
             android:layout_weight="1"
             android:gravity="center"
             android:text="확인"
             android:textColor="#000000"
             android:textSize="16sp"
-            android:background="#ffffff"/>
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/background"/>
 
     </LinearLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#000000"/>
 </LinearLayout>
