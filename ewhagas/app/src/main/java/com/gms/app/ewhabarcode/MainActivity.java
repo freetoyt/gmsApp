@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity implements BottomSheetDialog
     InputStream mInputStream;
     OutputStream mOutputStream;
     Thread mWorkerThread;
-    int readBufferPositon;      //버퍼 내 수신 문자 저장 위치
+    int readBufferPositon;      //버퍼 내 수신 문자 저장 위치 
     byte[] readBuffer;      //수신 버퍼
     byte mDelimiter = 10;
 
