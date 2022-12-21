@@ -291,12 +291,12 @@ public class LoginActivity extends AppCompatActivity {
                         editor.commit();
                         //Toast.makeText(getApplicationContext(),"로그인 설정 저장,",Toast.LENGTH_LONG).show();
                     }
-                    Toast.makeText(getApplicationContext(),"아이디  "+id+"로 로그인이 성공하였습니다.",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"아이디  "+id+"로 로그인이 성공하였습니다.",Toast.LENGTH_SHORT).show();
 
                     Intent intent = new Intent(LoginActivity.this,MainActivity.class);
                     intent.putExtra("uid",id);
                     intent.putExtra("pw", name);
-                    Toast.makeText(getApplicationContext(),"메인창 이동.",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"메인창 이동.",Toast.LENGTH_SHORT).show();
                     startActivity(intent);
                 }else{
                     Toast.makeText(getApplicationContext(),"로그인이 실패하였습니다,",Toast.LENGTH_SHORT).show();

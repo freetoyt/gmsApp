@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity implements BottomSheetDialog
     InputStream mInputStream;
     OutputStream mOutputStream;
     Thread mWorkerThread;
-    int readBufferPositon;      //버퍼 내 수신 문자 저장 위치 
+    int readBufferPositon;      //버퍼 내 수신 문자 저장 위치
     byte[] readBuffer;      //수신 버퍼
     byte mDelimiter = 10;
 
@@ -281,8 +281,8 @@ public class MainActivity extends AppCompatActivity implements BottomSheetDialog
 
             ad.show();
         }
-        Log.d("MainActivity", "Build.VERSION.SDK_INT =" + Build.VERSION.SDK_INT);
-        Log.d("MainActivity", "Build.VERSION_CODES.S =" + Build.VERSION_CODES.S);
+//        Log.d("MainActivity", "Build.VERSION.SDK_INT =" + Build.VERSION.SDK_INT);
+//        Log.d("MainActivity", "Build.VERSION_CODES.S =" + Build.VERSION_CODES.S);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
             if (this.checkSelfPermission(Manifest.permission.BLUETOOTH_SCAN) != PackageManager.PERMISSION_GRANTED) {
                 final AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -303,7 +303,7 @@ public class MainActivity extends AppCompatActivity implements BottomSheetDialog
             }
         }
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-            Log.d("MainActivity", "checkSelfPermission BLUETOOTH_CONNECT=" + this.checkSelfPermission(Manifest.permission.BLUETOOTH_CONNECT));
+
             if (this.checkSelfPermission(Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
                 final AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
@@ -321,21 +321,7 @@ public class MainActivity extends AppCompatActivity implements BottomSheetDialog
                 builder.show();
             }
         }
-        // 앱버전 체크
-        /*
-        SimpleDateFormat formatter = new SimpleDateFormat ( "yyyy.MM.dd", Locale.KOREA );
-        Date currentTime = new Date ( );
-        String dTime = formatter.format ( currentTime );
-*/
-        //if(!dTime.equals(appVersionCheckDate)) {
-        /* 20210212
-            String appVersionUrl = host + getString(R.string.api_appVersion);
 
-            // AsyncTask를 통해 HttpURLConnection 수행.
-            AppNetworkTask appNetworkTask = new AppNetworkTask(appVersionUrl, null);
-            appNetworkTask.execute();
-        //s}
-        */
         // 거래처목록 가져오기
         String value = sharedPreferences.getString("clist", "");
 
@@ -544,26 +530,6 @@ public class MainActivity extends AppCompatActivity implements BottomSheetDialog
             }
         });
 
-//        btn_as.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//                if(arrayList.size() <= 0){
-//                    Toast.makeText(MainActivity.this, "용기를 선택하세요", Toast.LENGTH_LONG).show();
-//                }else {
-//
-//                    String tempStr = "";
-//                    for (int i = 0; i < arrayList.size(); i++) {
-//                        tempStr += arrayList.get(i).getTv_bottleBarCd() + ",";
-//                    }
-//
-//                    // 하단 창 띄우기
-//                    AsSheetDialog asSheet = new AsSheetDialog(MainActivity.this,tempStr);
-//                    asSheet.show(getSupportFragmentManager(), "exampleBottomSheet");
-//
-//                }
-//            }
-//        });
         btn_report.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -648,43 +614,7 @@ public class MainActivity extends AppCompatActivity implements BottomSheetDialog
                 }
             }
         });
-        /*
-        btn_deleteAll.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                if(arrayList.size() > 0 ){
-
-                    AlertDialog.Builder ad = new AlertDialog.Builder(MainActivity.this);
-                    ad.setMessage("리스트를 삭제하시겠습니까?");
-
-                    ad.setPositiveButton("확인", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-
-                            Toast.makeText(MainActivity.this, "리스트를 삭제하였습니다", Toast.LENGTH_SHORT).show();
-                            MainActivity.clearArrayList();
-                            dialog.dismiss();
-
-                            SharedPreferences.Editor editor = sharedPreferences.edit();
-                            editor.remove("notSaveArray");
-                            editor.commit();
-                        }
-                    });
-
-                    ad.setNegativeButton("취소", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            dialog.dismiss();
-                        }
-                    });
-                    ad.show();
-                }else{
-                    Toast.makeText(MainActivity.this, "삭제할 용기목록이 없습니다.", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-*/
         btn_logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -1120,7 +1050,7 @@ public class MainActivity extends AppCompatActivity implements BottomSheetDialog
         final Handler handler = new Handler();
         readBuffer = new byte[1024];  //  수신 버퍼
         readBufferPositon = 0;        //   버퍼 내 수신 문자 저장 위치
-        Log.i("***************** MainActivity  beginListenForData msg","start");
+//        Log.i(" MainActivity  beginListenForData msg","start");
         // 문자열 수신 쓰레드
         mWorkerThread = new Thread(new Runnable() {
             @Override
