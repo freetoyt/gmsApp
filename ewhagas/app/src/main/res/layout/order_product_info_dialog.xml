@@ -13,8 +13,9 @@
         android:textColor="#ffffff"
         android:textSize="20dp"
         android:text="주문상품정보"
-        android:background="@color/colorAccent"/>
+        android:background="@drawable/bg_gradient"/>
     <View style="@style/Divider"/>
+    <!--
     <TextView
         android:id="@+id/title"
         android:layout_width="match_parent"
@@ -24,6 +25,7 @@
         android:text="* 파란색은 납품된 상품입니다."
         />
     <View style="@style/Divider"/>
+    -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rc_productList"
         android:layout_width="match_parent"
@@ -39,12 +41,16 @@
     <Button
         android:id="@+id/okButton"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="35dp"
         android:layout_weight="1"
         android:gravity="center"
         android:text="확인"
         android:textColor="#000000"
         android:textSize="16dp"
-        android:background="#ffffff"/>
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:background="@drawable/background"/>
 
 </LinearLayout>

@@ -780,7 +780,7 @@ public class MainActivity extends AppCompatActivity implements BottomSheetDialog
                     editor.putString("notSaveArray", arrStr);
                     editor.commit();
                 }
-                Toast.makeText(MainActivity.this, "취소!", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(MainActivity.this, "취소!", Toast.LENGTH_SHORT).show();
                 isScan = false;
             } else {
                 //qrcode 결과가 있으면

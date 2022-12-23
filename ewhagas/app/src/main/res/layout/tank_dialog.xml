@@ -7,12 +7,12 @@
     <TextView
         android:id="@+id/title"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="50dp"
         android:gravity="center"
         android:textColor="#ffffff"
         android:textSize="16dp"
         android:text="커스텀 다이얼로그"
-        android:background="@color/colorAccent"/>
+        android:background="@drawable/bg_gradient"/>
 
     <View
         android:layout_width="match_parent"
@@ -26,7 +26,7 @@
         android:gravity="center"
         android:textColor="#000000"
         android:textSize="16dp"
-        android:hint="검색."/>
+        android:hint="거래처명를 입력하세요"/>
 
     <ListView
         android:id="@+id/listview"
@@ -37,10 +37,11 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
+        android:layout_margin="5dp"
         android:background="#AFAEAE"/>
     <RadioGroup
         android:id="@+id/rg_type"
-        android:minHeight="40dp"
+        android:minHeight="30dp"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -50,7 +51,7 @@
             android:id="@+id/rb_sale"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
+            android:gravity="center_vertical"
             android:layout_gravity="center"
             android:textSize="16dp"
             android:text="판매" />
@@ -61,6 +62,7 @@
             android:id="@+id/rb_charge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:gravity="center_vertical"
             android:layout_gravity="center"
             android:textSize="16dp"
             android:text="충전" />
@@ -68,21 +70,25 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
+        android:layout_margin="5dp"
         android:background="#AFAEAE"/>
     <Spinner
         android:id="@+id/spinner"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="30dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
         android:textSize="@dimen/item_text_size"
         android:entries="@array/nodagProduct">
     </Spinner>
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
+        android:layout_margin="5dp"
         android:background="#AFAEAE"/>
     <RadioGroup
         android:id="@+id/rg_unit"
-        android:minHeight="40dp"
+        android:minHeight="30dp"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -92,7 +98,7 @@
             android:id="@+id/rb_l"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
+            android:gravity="center_vertical"
             android:layout_gravity="center"
             android:textSize="16dp"
             android:text="L" />
@@ -103,6 +109,7 @@
             android:id="@+id/rb_kg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:gravity="center_vertical"
             android:layout_gravity="center"
             android:textSize="16dp"
             android:text="Kg" />
@@ -110,6 +117,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
+        android:layout_margin="5dp"
         android:background="#AFAEAE"/>
     <LinearLayout
         android:layout_width="match_parent"
@@ -117,20 +125,20 @@
         android:orientation="horizontal">
         <TextView
             android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:gravity="center"
             android:textColor="#000000"
             android:textSize="16dp"
             android:text="수량"/>
-    <EditText
-        android:id="@+id/productCount"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:gravity="center"
-        android:textColor="#000000"
-        android:textSize="16dp"
-        android:inputType="number"
-        android:hint="수량 및 L."/>
+        <EditText
+            android:id="@+id/productCount"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:textSize="16dp"
+            android:inputType="number"
+            android:hint="수량 및 L."/>
     </LinearLayout>
     <View
         android:layout_width="match_parent"
@@ -138,7 +146,7 @@
         android:background="#AFAEAE"/>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="50dp"
         android:orientation="horizontal">
 
         <Button
@@ -150,12 +158,11 @@
             android:text="확인"
             android:textColor="#000000"
             android:textSize="16dp"
-            android:background="#ffffff"/>
-
-        <View
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:background="#000000" />
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/background"/>
 
         <Button
             android:id="@+id/cancelButton"
@@ -166,11 +173,11 @@
             android:text="취소"
             android:textColor="#000000"
             android:textSize="16dp"
-            android:background="#ffffff"/>
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/background"/>
     </LinearLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#000000"/>
 </LinearLayout>

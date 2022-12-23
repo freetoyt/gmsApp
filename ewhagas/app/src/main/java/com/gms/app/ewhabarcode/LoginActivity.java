@@ -296,7 +296,7 @@ public class LoginActivity extends AppCompatActivity {
                     Intent intent = new Intent(LoginActivity.this,MainActivity.class);
                     intent.putExtra("uid",id);
                     intent.putExtra("pw", name);
-                    Toast.makeText(getApplicationContext(),"메인창 이동.",Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(getApplicationContext(),"메인창 이동.",Toast.LENGTH_SHORT).show();
                     startActivity(intent);
                 }else{
                     Toast.makeText(getApplicationContext(),"로그인이 실패하였습니다,",Toast.LENGTH_SHORT).show();

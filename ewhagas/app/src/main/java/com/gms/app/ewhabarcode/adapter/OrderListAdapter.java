@@ -93,7 +93,7 @@ public class OrderListAdapter extends RecyclerView.Adapter<OrderListAdapter.Orde
             @Override
             public void onClick(View v) {
                 String orderId = holder.tv_orderId.getText().toString();
-                Toast.makeText(v.getContext(), "주문 정보 가져오기."+orderId, Toast.LENGTH_SHORT).show();
+//                Toast.makeText(v.getContext(), "주문 정보 가져오기."+orderId, Toast.LENGTH_SHORT).show();
                 OrderProductInfoDialog orderProductInfo = new OrderProductInfoDialog(v.getContext());
                 // 커스텀 다이얼로그를 호출한다.
                 // 커스텀 다이얼로그의 결과를 출력할 TextView를 매개변수로 같이 넘겨준다.

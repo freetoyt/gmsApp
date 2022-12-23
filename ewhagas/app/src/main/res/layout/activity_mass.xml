@@ -17,7 +17,7 @@
             android:id="@+id/title_layout"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="#1E88E5">
+            android:background="#FFFFFF">
 
             <ImageView
                 android:layout_width="60dp"
@@ -32,8 +32,9 @@
                 android:layout_gravity="center"
                 android:gravity="center_vertical"
                 android:text="@string/comp_name"
-                android:textColor="#ffffff"
+                android:textColor="#000"
                 android:textSize="20sp"
+                android:paddingLeft="5dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
@@ -47,11 +48,14 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_gravity="center_vertical"
-            android:background="#D3D0D0"
-            android:gravity="center"
-            android:text="상품 카운트"
-            android:textColor="#000000"
-            android:textSize="20sp" />
+            android:background="@drawable/bg_gradient"
+            android:paddingTop="5dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="5dp"
+            android:gravity="right"
+            android:text="상품 카운트 : 0"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
 
         <View style="@style/Divider" />
 
@@ -68,13 +72,16 @@
             android:text="1111" />
 
     </LinearLayout>
-    <View style="@style/Divider"
-        tools:ignore="MissingConstraints" />
+    <View style="@style/Divider"/>
+
     <Button
         android:id="@+id/btn_massRentBack"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:text="대여회수"
+        android:layout_margin="5dp"
+        android:textSize="@dimen/button_4_size"
+        android:background="@drawable/background"
         app:layout_constraintBottom_toTopOf="@+id/btn_goBack"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btn_massBack" />
@@ -82,8 +89,11 @@
     <Button
         android:id="@+id/btn_goBack"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:text="메인으로"
+        android:layout_margin="5dp"
+        android:textSize="@dimen/button_4_size"
+        android:background="@drawable/background"
         app:layout_constraintBottom_toTopOf="@+id/btn_buyback"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/btn_massOut" />
@@ -91,8 +101,11 @@
     <Button
         android:id="@+id/btn_massCome"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:text="대량입고"
+        android:layout_margin="5dp"
+        android:textSize="@dimen/button_4_size"
+        android:background="@drawable/background"
         app:layout_constraintBottom_toTopOf="@+id/btn_mscan"
         app:layout_constraintEnd_toStartOf="@id/btn_massOut"
         app:layout_constraintStart_toEndOf="@id/btn_massProduct" />
@@ -100,8 +113,11 @@
     <Button
         android:id="@+id/btn_massBack"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:text="대량회수"
+        android:layout_margin="5dp"
+        android:textSize="@dimen/button_4_size"
+        android:background="@drawable/background"
         app:layout_constraintBottom_toTopOf="@+id/btn_massOut"
         app:layout_constraintEnd_toStartOf="@+id/btn_massRentBack"
         app:layout_constraintStart_toEndOf="@+id/btn_massRent" />
@@ -109,8 +125,11 @@
     <Button
         android:id="@+id/btn_massSale"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:text="대량판매"
+        android:layout_margin="5dp"
+        android:textSize="@dimen/button_4_size"
+        android:background="@drawable/background"
         app:layout_constraintBottom_toTopOf="@+id/btn_massProduct"
         app:layout_constraintEnd_toStartOf="@+id/btn_massRent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -118,8 +137,11 @@
     <Button
         android:id="@+id/btn_massRent"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:text="대량대여"
+        android:textSize="@dimen/button_4_size"
+        android:layout_margin="5dp"
+        android:background="@drawable/background"
         app:layout_constraintBottom_toTopOf="@+id/btn_massCome"
         app:layout_constraintEnd_toStartOf="@+id/btn_massBack"
         app:layout_constraintStart_toEndOf="@+id/btn_massSale" />
@@ -127,9 +149,12 @@
     <Button
         android:id="@+id/btn_massOut"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:text="대량출고"
         android:textColor="#000"
+        android:layout_margin="5dp"
+        android:textSize="@dimen/button_4_size"
+        android:background="@drawable/background"
         app:layout_constraintBottom_toTopOf="@+id/btn_mmanual"
         app:layout_constraintEnd_toStartOf="@+id/btn_goBack"
         app:layout_constraintStart_toEndOf="@+id/btn_massCome" />
@@ -137,10 +162,12 @@
     <Button
         android:id="@+id/btn_massProduct"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:text="상품"
         android:textColor="#000"
+        android:layout_margin="5dp"
         android:textSize="@dimen/button_4_size"
+        android:background="@drawable/background"
         app:layout_constraintBottom_toTopOf="@+id/btn_mscan"
         app:layout_constraintEnd_toStartOf="@+id/btn_massCome"
         app:layout_constraintStart_toStartOf="parent" />
@@ -148,8 +175,11 @@
     <Button
         android:id="@+id/btn_mscan"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:text="스캔하기"
+        android:layout_margin="5dp"
+        android:textSize="@dimen/button_4_size"
+        android:background="@drawable/background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btn_mmanual"
         app:layout_constraintStart_toStartOf="parent" />
@@ -157,8 +187,11 @@
     <Button
         android:id="@+id/btn_mmanual"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:text="수동입력"
+        android:layout_margin="5dp"
+        android:textSize="@dimen/button_4_size"
+        android:background="@drawable/background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btn_buyback"
         app:layout_constraintStart_toEndOf="@+id/btn_mscan" />
@@ -166,8 +199,11 @@
     <Button
         android:id="@+id/btn_buyback"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:text="앱정보"
+        android:layout_margin="5dp"
+        android:textSize="@dimen/button_4_size"
+        android:background="@drawable/background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btn_mmanual" />
